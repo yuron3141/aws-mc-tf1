@@ -1,5 +1,5 @@
 # AWS_minecraft_terraform
-マインクラフトの鯖をterraformでAWSのリソースを用いて構築できます。
+Minecraft Java版(2023/6時点最新版のv1.20.1)の鯖をterraformでAWSのリソースを用いて構築できます。
 
 アプリ起動基盤には仮想サーバであるEC2、minecraftのワールドバックアップデータはS3、
 任意時間にCloudWatch/Lambda関数を利用してEC2の起動と停止が行えます。
@@ -24,7 +24,9 @@
 
 ## EC2インスタンスのパラメータ
 AMI: Amazon Linux 2 最新版
+
 インスタンスタイプ: ''t3a.medium''
+
 EBS: 20GB, GP2
 
 ## 開発環境
