@@ -1,0 +1,13 @@
+**/.ssh/*
+*.zip
+instance_id.txt
+
+# Terraform specific
+**/.terraform/*
+**/.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfvars
+terraform.tfstate*
+crash.log
+*.tfplan
