@@ -17,6 +17,13 @@ resource "aws_lambda_function" "mc_instance_start_lambda" {
     }
   }
 }
+resource "aws_lambda_permission" "start_lambda_perm" {
+  statement_id  = "AllowCloudWatchEventsToInvokeLambda"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.mc_instance_start_lambda.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.mc_start_rule.arn
+}
 
 # stop function
 resource "aws_lambda_function" "mc_instance_stop_lambda" {
@@ -36,4 +43,11 @@ resource "aws_lambda_function" "mc_instance_stop_lambda" {
       INSTANCE_ID = aws_instance.minecraft.id
     }
   }
+}
+resource "aws_lambda_permission" "stop_lambda_perm" {
+  statement_id  = "AllowCloudWatchEventsToInvokeLambda"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.mc_instance_stop_lambda.function_name
+  principal     = "events.amazonaws.com"
+  source_arn    = aws_cloudwatch_event_rule.mc_stop_rule.arn
 }
