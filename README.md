@@ -19,7 +19,7 @@ Minecraft Java版(2023/6時点最新版のv1.20.1)の鯖をterraformでAWSのリ
 1. クライアントの環境変数にvariables.tfの変数名を参考にAWSのアクセスキー、シークレットキー、リージョンの情報を登録して利用できるようにしてください
 2. ``/deploy``内の.pyを.pyのファイル名と同じ名称でそれぞれZipで圧縮してください。
 3. ``terraform init``、``terraform plan``,``terraform apply``で一度目のデプロイを行ってください
-4. ``/deploy``内の.pyのinstance_idの値はinstance_id.txtに出力された値にそれぞれ書き換えて、２度目の``terraform plan``,``terraform apply``で反映してください。
+4. ``/deploy``内の.pyのinstance_idの値はinstance_id.txtに出力された値にそれぞれ書き換えて手順2を再度行い、２度目の``terraform plan``,``terraform apply``で反映してください。
 5. 3～4の手順でLambda関数が動くようになります。
 
 ## EC2インスタンスのパラメータ
