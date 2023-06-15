@@ -10,7 +10,7 @@ resource "aws_cloudwatch_event_rule" "mc_start_rule" {
 # Configure CloudWatch event target
 resource "aws_cloudwatch_event_target" "mc_start_event_target" {
   rule = aws_cloudwatch_event_rule.mc_start_rule.name
-  target_id = "mc-start-lambda-target"
+  target_id = aws_lambda_function.mc_instance_start_lambda.function_name
   arn  = aws_lambda_function.mc_instance_start_lambda.arn
 }
 
@@ -25,6 +25,6 @@ resource "aws_cloudwatch_event_rule" "mc_stop_rule" {
 # Configure CloudWatch event target
 resource "aws_cloudwatch_event_target" "mc_stop_event_target" {
   rule = aws_cloudwatch_event_rule.mc_stop_rule.name
-  target_id = "mc-stop-lambda-target"
+  target_id = aws_lambda_function.mc_instance_stop_lambda.function_name
   arn  = aws_lambda_function.mc_instance_stop_lambda.arn
 }
