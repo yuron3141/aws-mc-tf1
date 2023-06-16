@@ -8,6 +8,8 @@ Minecraft Java版(2023/6時点最新版のv1.20.1)の鯖をterraformでAWSのリ
 
 .pyを.pyのファイル名と同じ名称でそれぞれZipで圧縮してください。
 
+windowsの方は.Net付属のコマンド、または7zipソフトウェア、Mac/Linuxの方はzipコマンドで圧縮可能です。
+
 インフラ構成図は``infra_structure.jpg``を参照してください。
 
 * 注意点: S3のバケット名を変える場合``/template``内の初期実行シェルスクリプト内の値も変更する必要があるので注意してください
@@ -32,5 +34,11 @@ EBS: 20GB, GP2
 ## 開発環境
 
 Terraform v1.4.6
+
+## 参考URL
+
+[Minecraft for AWS】EC2インスタンスでMinecraftサーバーを構築 Ver1.19](https://dev.classmethod.jp/articles/new-minecraft-for-aws_ec2-instance/)
+
+[AWS EC2を使ってMinecraftのマルチサーバを立てる その2](https://xp-cloud.jp/blog/2022/04/22/12757/)
 
 
