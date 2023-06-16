@@ -1,6 +1,6 @@
 # start function
 resource "aws_lambda_function" "mc_instance_start_lambda" {
-  // Lambda関数の設定
+  // configure lambda function
   function_name = "start_mc_function"
   role = aws_iam_role.iam_for_lambda_mcEC2.arn
 
@@ -17,6 +17,7 @@ resource "aws_lambda_function" "mc_instance_start_lambda" {
     }
   }
 }
+# configure lambda function permisiion
 resource "aws_lambda_permission" "start_lambda_perm" {
   statement_id  = "AllowCloudWatchEventsToInvokeLambda"
   action        = "lambda:InvokeFunction"
@@ -27,7 +28,7 @@ resource "aws_lambda_permission" "start_lambda_perm" {
 
 # stop function
 resource "aws_lambda_function" "mc_instance_stop_lambda" {
-  // Lambda関数の設定
+  // configure lambda function
   function_name = "stop_mc_function"
   role = aws_iam_role.iam_for_lambda_mcEC2.arn
 
@@ -44,6 +45,7 @@ resource "aws_lambda_function" "mc_instance_stop_lambda" {
     }
   }
 }
+# configure lambda function permisiion
 resource "aws_lambda_permission" "stop_lambda_perm" {
   statement_id  = "AllowCloudWatchEventsToInvokeLambda"
   action        = "lambda:InvokeFunction"
