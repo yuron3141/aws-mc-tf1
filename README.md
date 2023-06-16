@@ -37,7 +37,7 @@ Terraform v1.4.6
 
 ## 参考URL
 
-[Minecraft for AWS】EC2インスタンスでMinecraftサーバーを構築 Ver1.19](https://dev.classmethod.jp/articles/new-minecraft-for-aws_ec2-instance/)
+[【Minecraft for AWS】EC2インスタンスでMinecraftサーバーを構築 Ver1.19](https://dev.classmethod.jp/articles/new-minecraft-for-aws_ec2-instance/)
 
 [AWS EC2を使ってMinecraftのマルチサーバを立てる その2](https://xp-cloud.jp/blog/2022/04/22/12757/)
 
