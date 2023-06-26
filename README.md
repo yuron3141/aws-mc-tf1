@@ -8,9 +8,11 @@ Minecraft Java版(2023/6時点最新版のv1.20.1)の鯖をterraformでAWSのリ
 
 .pyを.pyのファイル名と同じ名称でそれぞれZipで圧縮してください。
 
-windowsの方は.Net付属のコマンド、または7zipソフトウェア、Mac/Linuxの方はzipコマンドで圧縮可能です。
+windowsの方は.Net付属のコマンド、または7zipソフSトウェア、Mac/Linuxの方はzipコマンドで圧縮可能です。
 
 インフラ構成図は``infra_structure.jpg``を参照してください。
+
+![Screenshot](infra_structure.jpg)
 
 * 注意点: S3のバケット名を変える場合``/template``内の初期実行シェルスクリプト内の値も変更する必要があるので注意してください
 * EC2のAMIを変更する場合、初期実行シェルスクリプトが適切に動かない場合があります。その場合はスクリプトの内容をAMI環境に合わせて書き換えるか、実行せずに、手動で設定を行ってください。
