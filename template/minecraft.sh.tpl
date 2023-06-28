@@ -26,7 +26,7 @@ mv "$file.tmp" "$file"
 # 起動シェルスクリプトの作成
 cat << 'EOF' > launch.sh
 #!/bin/sh
-cd /home/ec2-user/minecraft
+cd ~/minecraft
 
 zip $(date "+%Y%m%d%H").zip -r world world_nether world_the_end/
 aws s3 cp $(date "+%Y%m%d%H").zip s3://unit-minecraft-world/world_backup/world/ --storage-class ONEZONE_IA
@@ -37,7 +37,7 @@ EOF
 
 chmod +x launch.sh
 
-cat << EOF > /../../../etc/systemd/system/minecraft.service
+cat << EOF > /../../etc/systemd/system/minecraft.service
 [Unit]
 Description=Minecraft Server
 After=network-online.target
@@ -45,8 +45,8 @@ After=network-online.target
 [Service]
 User=ec2-user
 
-WorkingDirectory=/home/ec2-user/minecraft
-ExecStart=/bin/bash /home/ec2-user/minecraft/launch.sh
+WorkingDirectory=/root/minecraft
+ExecStart=/bin/bash /root/minecraft/launch.sh
 Restart=always
 RestartSec=5s
 
