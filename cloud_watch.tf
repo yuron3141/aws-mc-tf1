@@ -3,7 +3,7 @@ resource "aws_cloudwatch_event_rule" "mc_start_rule" {
   name        = "mc-start-rule"
   description = "Start EC2 every day 15:00 in JPT"
 
-  schedule_expression = "cron(0 6 * * ? *)"
+  schedule_expression = "cron(0 7 * * ? *)"
   
 }
 
